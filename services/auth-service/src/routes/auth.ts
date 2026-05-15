@@ -1,7 +1,15 @@
-import { FastifyInstance } from 'fastify';
+import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import * as authService from '../services/auth.service';
 import * as usersDb from '../db/users';
 import { RegisterSchema, LoginSchema } from '../schemas/auth.schema';
+
+async function authRequired(request: FastifyRequest, reply: FastifyReply) {
+  try {
+    await request.jwtVerify();
+  } catch (error) {
+    reply.status(401).send({ error: 'Unauthorized' });
+  }
+}
 
 export async function authRoutes(app: FastifyInstance) {
   // Register
@@ -65,7 +73,7 @@ export async function authRoutes(app: FastifyInstance) {
   });
 
   // Get current user (requires auth)
-  app.get<{ Reply: any }>('/me', { onRequest: [app.authenticate] }, async (request, reply) => {
+  app.get<{ Reply: any }>('/me', { preHandler: authRequired }, async (request, reply) => {
     try {
       const user = await usersDb.findById((request.user as any).userId);
       if (!user) {
