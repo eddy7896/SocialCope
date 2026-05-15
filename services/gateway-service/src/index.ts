@@ -18,16 +18,20 @@ async function start() {
   app.get('/health', async () => ({ status: 'ok', service: 'gateway-service' }));
 
   // Auth routes (no auth required for register/login)
-  app.register(httpProxy, {
+  await app.register(httpProxy, {
     upstream: SERVICES.auth,
     prefix: '/auth',
   });
 
-  // Projects routes (auth required)
-  app.register(httpProxy, {
-    upstream: SERVICES.canvas,
-    prefix: '/projects',
-    onRequest: [authMiddleware],
+  // Projects routes (auth required) - use custom route with preHandler
+  app.route({
+    method: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
+    url: '/projects/*',
+    preHandler: authMiddleware,
+    handler: async (request, reply) => {
+      const path = request.url.slice(9); // Remove '/projects' prefix
+      return reply.from(`${SERVICES.canvas}${path}`);
+    },
   });
 
   try {
