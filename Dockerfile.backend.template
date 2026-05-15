@@ -1,0 +1,26 @@
+# Optimized Backend Dockerfile (Node.js microservice)
+# Copy this to services/SERVICE_NAME/Dockerfile and adjust PORT
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only package files (layer caching — won't rebuild if code changes)
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --only=production && npm cache clean --force
+
+# Copy application code
+COPY . .
+
+# Build TypeScript (if needed)
+RUN npm run build 2>/dev/null || true
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:' + (process.env.PORT || 3000) + '/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
