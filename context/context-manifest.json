@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "system": "socialCOPE Context System",
+    "version": "1.0",
+    "lastUpdated": "2026-05-16",
+    "purpose": "Machine-readable manifest of all context files, their roles, priorities, and relationships"
+  },
+  "rootFiles": [
+    {
+      "file": "README.md",
+      "role": "System overview and navigation guide",
+      "priority": "CRITICAL",
+      "description": "Entry point for all new sessions and team members"
+    },
+    {
+      "file": "context-manifest.json",
+      "role": "This file - machine-readable context index",
+      "priority": "CRITICAL",
+      "description": "Machine-readable list of all context files"
+    },
+    {
+      "file": "context-registry.json",
+      "role": "File registry with domain mapping",
+      "priority": "HIGH",
+      "description": "Maps files to domains, priority levels, and status"
+    },
+    {
+      "file": "source-of-truth-policy.md",
+      "role": "Authority hierarchy and conflict resolution",
+      "priority": "CRITICAL",
+      "description": "Defines how to resolve conflicts between specifications"
+    },
+    {
+      "file": "architecture-locks.md",
+      "role": "Immutable architectural decisions",
+      "priority": "CRITICAL",
+      "description": "10 locked decisions that cannot change without formal override"
+    },
+    {
+      "file": "anti-hallucination-rules.md",
+      "role": "What Claude must NOT assume or invent",
+      "priority": "CRITICAL",
+      "description": "Guardrails preventing hallucinated features or assumptions"
+    },
+    {
+      "file": "terminology-registry.md",
+      "role": "Canonical term definitions",
+      "priority": "HIGH",
+      "description": "Machine-processable definitions of key terms"
+    },
+    {
+      "file": "glossary.md",
+      "role": "Human-readable glossary",
+      "priority": "MEDIUM",
+      "description": "Human-friendly definitions of key concepts"
+    },
+    {
+      "file": "dependency-graph.md",
+      "role": "Service and event dependencies",
+      "priority": "HIGH",
+      "description": "Maps service-to-service and event-to-handler dependencies"
+    },
+    {
+      "file": "decision-log.md",
+      "role": "Architectural decisions + rationale",
+      "priority": "HIGH",
+      "description": "Log of all significant decisions with rationale"
+    },
+    {
+      "file": "change-management.md",
+      "role": "Process for proposing architectural changes",
+      "priority": "MEDIUM",
+      "description": "Governance for how changes are proposed and approved"
+    }
+  ],
+  "contextFolders": [
+    {
+      "folder": "constraints/",
+      "priority": 1,
+      "role": "Non-negotiable platform rules",
+      "contains": ["non-negotiable-rules.md"],
+      "readWhen": "Before any implementation decision"
+    },
+    {
+      "folder": "architecture-context/",
+      "priority": 2,
+      "role": "System architecture overview",
+      "contains": ["README.md", "rules.md", "spec.md", "service-topology.md", "data-flow.md"],
+      "readWhen": "Understanding overall system design"
+    },
+    {
+      "folder": "semantic-engine-context/",
+      "priority": 2,
+      "role": "Semantic node hierarchy and scene graphs",
+      "contains": ["README.md", "rules.md", "spec.md", "node-schema.md", "hierarchy-rules.md"],
+      "readWhen": "Implementing canvas or scene management"
+    },
+    {
+      "folder": "mutation-engine-context/",
+      "priority": 2,
+      "role": "Mutation pipeline and change validation",
+      "contains": ["README.md", "rules.md", "spec.md", "mutation-contracts.md", "validation-rules.md", "audit-spec.md"],
+      "readWhen": "Making any changes to canvas or semantic structures"
+    },
+    {
+      "folder": "ai-system-context/",
+      "priority": 2,
+      "role": "AI orchestration and tool registry",
+      "contains": ["README.md", "rules.md", "spec.md", "tool-registry.md", "orchestration-pipeline.md", "safety-constraints.md"],
+      "readWhen": "Implementing AI features or tool calling"
+    },
+    {
+      "folder": "service-context/",
+      "priority": 3,
+      "role": "Service architecture and responsibilities",
+      "contains": ["README.md", "rules.md", "service-list.md", "boundaries.md", "communication-matrix.md"],
+      "readWhen": "Starting service development"
+    },
+    {
+      "folder": "frontend-context/",
+      "priority": 3,
+      "role": "Frontend architecture with Next.js and tldraw",
+      "contains": ["README.md", "rules.md", "spec.md", "component-structure.md", "state-management.md", "canvas-api.md"],
+      "readWhen": "Implementing frontend features"
+    },
+    {
+      "folder": "backend-context/",
+      "priority": 3,
+      "role": "Backend API design and business logic",
+      "contains": ["README.md", "rules.md", "spec.md", "api-design.md", "service-patterns.md"],
+      "readWhen": "Implementing backend services"
+    },
+    {
+      "folder": "infrastructure-context/",
+      "priority": 3,
+      "role": "Docker, deployment, and infrastructure topology",
+      "contains": ["README.md", "rules.md", "spec.md", "docker-spec.md", "deployment-topology.md"],
+      "readWhen": "Setting up infrastructure or containers"
+    },
+    {
+      "folder": "event-system-context/",
+      "priority": 3,
+      "role": "Event architecture and communication",
+      "contains": ["README.md", "rules.md", "spec.md", "events-registry.md", "pubsub-spec.md"],
+      "readWhen": "Implementing inter-service communication"
+    },
+    {
+      "folder": "queue-system-context/",
+      "priority": 3,
+      "role": "Job queues and async processing",
+      "contains": ["README.md", "rules.md", "spec.md", "queue-spec.md", "job-types.md"],
+      "readWhen": "Implementing async jobs or workers"
+    },
+    {
+      "folder": "design-system-context/",
+      "priority": 4,
+      "role": "Visual design system and components",
+      "contains": ["README.md", "rules.md", "spec.md", "colors.md", "typography.md", "spacing.md", "components.md"],
+      "readWhen": "Implementing UI or design updates"
+    },
+    {
+      "folder": "ui-ux-context/",
+      "priority": 4,
+      "role": "User interaction patterns and workflows",
+      "contains": ["README.md", "rules.md", "spec.md", "interaction-patterns.md", "command-system.md", "keyboard-shortcuts.md"],
+      "readWhen": "Designing user interactions"
+    },
+    {
+      "folder": "product-context/",
+      "priority": 5,
+      "role": "Product vision and strategy",
+      "contains": ["README.md", "vision.md", "personas.md", "success-metrics.md"],
+      "readWhen": "Understanding product direction"
+    },
+    {
+      "folder": "security-context/",
+      "priority": 5,
+      "role": "Authentication, authorization, and data protection",
+      "contains": ["README.md", "rules.md", "spec.md", "authentication.md", "authorization.md", "data-protection.md"],
+      "readWhen": "Implementing security features"
+    },
+    {
+      "folder": "deployment-context/",
+      "priority": 5,
+      "role": "Deployment strategies and environments",
+      "contains": ["README.md", "rules.md", "spec.md", "environments.md", "deployment-strategies.md", "scaling.md"],
+      "readWhen": "Deploying to production"
+    },
+    {
+      "folder": "realtime-context/",
+      "priority": 5,
+      "role": "Realtime collaboration with Yjs and Hocuspocus",
+      "contains": ["README.md", "rules.md", "spec.md", "yjs-spec.md", "presence-engine.md", "sync-spec.md"],
+      "readWhen": "Implementing collaboration features"
+    },
+    {
+      "folder": "storage-context/",
+      "priority": 5,
+      "role": "Database and object storage architecture",
+      "contains": ["README.md", "rules.md", "spec.md", "postgres-spec.md", "r2-spec.md", "data-models.md"],
+      "readWhen": "Implementing data persistence"
+    },
+    {
+      "folder": "export-context/",
+      "priority": 5,
+      "role": "Export pipelines for PSD, SVG, PDF",
+      "contains": ["README.md", "rules.md", "spec.md", "export-formats.md", "render-pipeline.md"],
+      "readWhen": "Implementing export features"
+    },
+    {
+      "folder": "template-system-context/",
+      "priority": 5,
+      "role": "Reusable templates and automation recipes",
+      "contains": ["README.md", "rules.md", "spec.md", "template-spec.md", "recipes.md"],
+      "readWhen": "Creating or using templates"
+    },
+    {
+      "folder": "workflow-context/",
+      "priority": 5,
+      "role": "Development workflows and team processes",
+      "contains": ["README.md", "rules.md", "spec.md", "development-workflow.md", "collaboration-patterns.md"],
+      "readWhen": "Understanding team processes"
+    },
+    {
+      "folder": "governance-context/",
+      "priority": 5,
+      "role": "Decision-making and approval processes",
+      "contains": ["README.md", "rules.md", "spec.md", "decision-framework.md", "approvals.md"],
+      "readWhen": "Proposing significant changes"
+    },
+    {
+      "folder": "development-rules/",
+      "priority": 5,
+      "role": "Coding standards and conventions",
+      "contains": ["README.md", "rules.md", "typescript.md", "code-style.md", "commit-conventions.md"],
+      "readWhen": "Writing code or reviewing PRs"
+    },
+    {
+      "folder": "contracts/",
+      "priority": 5,
+      "role": "API contracts and service interfaces",
+      "contains": ["README.md", "*-api.md", "*-events.md", "*-contracts.md"],
+      "readWhen": "Implementing service APIs or events"
+    },
+    {
+      "folder": "schemas/",
+      "priority": 5,
+      "role": "Database and JSON schemas",
+      "contains": ["README.md", "*.json", "*.sql"],
+      "readWhen": "Implementing data structures"
+    },
+    {
+      "folder": "playbooks/",
+      "priority": 5,
+      "role": "Runbooks and troubleshooting guides",
+      "contains": ["README.md", "*-runbook.md", "*-troubleshooting.md"],
+      "readWhen": "Operating or debugging the system"
+    },
+    {
+      "folder": "prompts/",
+      "priority": 5,
+      "role": "Claude system prompts and instructions",
+      "contains": ["README.md", "*.md"],
+      "readWhen": "Instructing Claude or implementing AI"
+    },
+    {
+      "folder": "validation/",
+      "priority": 5,
+      "role": "Testing strategies and verification procedures",
+      "contains": ["README.md", "rules.md", "spec.md", "test-strategy.md", "verification-checklist.md"],
+      "readWhen": "Planning tests or verifying implementations"
+    }
+  ],
+  "readingOrder": [
+    "README.md",
+    "source-of-truth-policy.md",
+    "architecture-locks.md",
+    "anti-hallucination-rules.md",
+    "constraints/non-negotiable-rules.md",
+    "architecture-context/README.md",
+    "semantic-engine-context/README.md",
+    "mutation-engine-context/README.md",
+    "ai-system-context/README.md",
+    "service-context/README.md",
+    "event-system-context/README.md"
+  ]
+}

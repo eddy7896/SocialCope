@@ -1,0 +1,357 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "purpose": "Registry mapping all context files to domains, priorities, and status",
+    "lastUpdated": "2026-05-16"
+  },
+  "fileRegistry": [
+    {
+      "path": "README.md",
+      "domain": "system",
+      "priority": 0,
+      "status": "active",
+      "type": "navigation"
+    },
+    {
+      "path": "context-manifest.json",
+      "domain": "system",
+      "priority": 0,
+      "status": "active",
+      "type": "metadata"
+    },
+    {
+      "path": "context-registry.json",
+      "domain": "system",
+      "priority": 0,
+      "status": "active",
+      "type": "metadata"
+    },
+    {
+      "path": "source-of-truth-policy.md",
+      "domain": "governance",
+      "priority": 1,
+      "status": "active",
+      "type": "immutable"
+    },
+    {
+      "path": "architecture-locks.md",
+      "domain": "governance",
+      "priority": 1,
+      "status": "active",
+      "type": "immutable"
+    },
+    {
+      "path": "anti-hallucination-rules.md",
+      "domain": "governance",
+      "priority": 1,
+      "status": "active",
+      "type": "immutable"
+    },
+    {
+      "path": "constraints/non-negotiable-rules.md",
+      "domain": "governance",
+      "priority": 1,
+      "status": "active",
+      "type": "rules"
+    },
+    {
+      "path": "terminology-registry.md",
+      "domain": "governance",
+      "priority": 2,
+      "status": "pending",
+      "type": "reference"
+    },
+    {
+      "path": "glossary.md",
+      "domain": "governance",
+      "priority": 2,
+      "status": "pending",
+      "type": "reference"
+    },
+    {
+      "path": "dependency-graph.md",
+      "domain": "architecture",
+      "priority": 2,
+      "status": "pending",
+      "type": "reference"
+    },
+    {
+      "path": "decision-log.md",
+      "domain": "governance",
+      "priority": 2,
+      "status": "pending",
+      "type": "log"
+    },
+    {
+      "path": "change-management.md",
+      "domain": "governance",
+      "priority": 2,
+      "status": "pending",
+      "type": "process"
+    },
+    {
+      "path": "architecture-context/README.md",
+      "domain": "architecture",
+      "priority": 2,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "semantic-engine-context/README.md",
+      "domain": "semantic",
+      "priority": 2,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "mutation-engine-context/README.md",
+      "domain": "mutation",
+      "priority": 2,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "ai-system-context/README.md",
+      "domain": "ai",
+      "priority": 2,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "service-context/README.md",
+      "domain": "services",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "frontend-context/README.md",
+      "domain": "frontend",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "backend-context/README.md",
+      "domain": "backend",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "infrastructure-context/README.md",
+      "domain": "infrastructure",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "event-system-context/README.md",
+      "domain": "events",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "queue-system-context/README.md",
+      "domain": "queues",
+      "priority": 3,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "design-system-context/README.md",
+      "domain": "design",
+      "priority": 4,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "ui-ux-context/README.md",
+      "domain": "ux",
+      "priority": 4,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "product-context/README.md",
+      "domain": "product",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "security-context/README.md",
+      "domain": "security",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "deployment-context/README.md",
+      "domain": "deployment",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "realtime-context/README.md",
+      "domain": "realtime",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "storage-context/README.md",
+      "domain": "storage",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "export-context/README.md",
+      "domain": "export",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "template-system-context/README.md",
+      "domain": "templates",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "workflow-context/README.md",
+      "domain": "workflow",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "governance-context/README.md",
+      "domain": "governance",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "development-rules/README.md",
+      "domain": "development",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "contracts/",
+      "domain": "contracts",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "schemas/",
+      "domain": "schemas",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "playbooks/",
+      "domain": "operations",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "prompts/",
+      "domain": "ai",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    },
+    {
+      "path": "validation/",
+      "domain": "testing",
+      "priority": 5,
+      "status": "pending",
+      "type": "context"
+    }
+  ],
+  "domainMap": {
+    "system": ["README.md", "context-manifest.json", "context-registry.json"],
+    "governance": ["source-of-truth-policy.md", "architecture-locks.md", "anti-hallucination-rules.md", "constraints/non-negotiable-rules.md", "terminology-registry.md", "glossary.md", "decision-log.md", "change-management.md", "governance-context/"],
+    "architecture": ["architecture-context/", "dependency-graph.md"],
+    "semantic": ["semantic-engine-context/"],
+    "mutation": ["mutation-engine-context/"],
+    "ai": ["ai-system-context/", "prompts/"],
+    "services": ["service-context/"],
+    "frontend": ["frontend-context/"],
+    "backend": ["backend-context/"],
+    "infrastructure": ["infrastructure-context/"],
+    "events": ["event-system-context/"],
+    "queues": ["queue-system-context/"],
+    "design": ["design-system-context/"],
+    "ux": ["ui-ux-context/"],
+    "product": ["product-context/"],
+    "security": ["security-context/"],
+    "deployment": ["deployment-context/"],
+    "realtime": ["realtime-context/"],
+    "storage": ["storage-context/"],
+    "export": ["export-context/"],
+    "templates": ["template-system-context/"],
+    "workflow": ["workflow-context/"],
+    "development": ["development-rules/"],
+    "contracts": ["contracts/"],
+    "schemas": ["schemas/"],
+    "operations": ["playbooks/"],
+    "testing": ["validation/"]
+  },
+  "priorityDistribution": {
+    "0": ["README.md", "context-manifest.json", "context-registry.json"],
+    "1": ["source-of-truth-policy.md", "architecture-locks.md", "anti-hallucination-rules.md", "constraints/non-negotiable-rules.md"],
+    "2": [
+      "architecture-context/",
+      "semantic-engine-context/",
+      "mutation-engine-context/",
+      "ai-system-context/",
+      "terminology-registry.md",
+      "glossary.md",
+      "dependency-graph.md",
+      "decision-log.md",
+      "change-management.md"
+    ],
+    "3": [
+      "service-context/",
+      "frontend-context/",
+      "backend-context/",
+      "infrastructure-context/",
+      "event-system-context/",
+      "queue-system-context/"
+    ],
+    "4": ["design-system-context/", "ui-ux-context/"],
+    "5": [
+      "product-context/",
+      "security-context/",
+      "deployment-context/",
+      "realtime-context/",
+      "storage-context/",
+      "export-context/",
+      "template-system-context/",
+      "workflow-context/",
+      "governance-context/",
+      "development-rules/",
+      "contracts/",
+      "schemas/",
+      "playbooks/",
+      "prompts/",
+      "validation/"
+    ]
+  },
+  "statusSummary": {
+    "active": 4,
+    "pending": 34,
+    "total": 38
+  }
+}

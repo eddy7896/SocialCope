@@ -1,0 +1,40 @@
+{
+  "name": "@socialcope/canvas-service",
+  "version": "0.1.0",
+  "description": "Scene graph and canvas API service",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npm run migrate && tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "npm run migrate && node dist/index.js",
+    "migrate": "tsx src/db/migrate.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fastify": "^4.24.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/jwt": "^7.1.0",
+    "pg": "^8.10.0",
+    "redis": "^4.6.0",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.0",
+    "zod": "^3.22.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "jest": "^29.7.0",
+    "@types/jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "supertest": "^6.3.0",
+    "@types/supertest": "^2.0.0"
+  }
+}
