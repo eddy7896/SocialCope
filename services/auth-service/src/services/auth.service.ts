@@ -14,7 +14,7 @@ export async function comparePassword(password: string, hash: string): Promise<b
 }
 
 export function signToken(userId: string, email: string): string {
-  const options: SignOptions = { expiresIn: JWT_EXPIRY };
+  const options: SignOptions = { expiresIn: JWT_EXPIRY as any };
   return sign({ userId, email }, JWT_SECRET, options);
 }
 
