@@ -1,11 +1,19 @@
-﻿import { FastifyInstance } from "fastify";
+﻿import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import * as nodesDb from "../db/nodes";
+
+async function authRequired(request: FastifyRequest, reply: FastifyReply) {
+  try {
+    await request.jwtVerify();
+  } catch (error) {
+    reply.status(401).send({ error: "Unauthorized" });
+  }
+}
 
 export async function nodeRoutes(app: FastifyInstance) {
   // GET /projects/:projectId/nodes
   app.get<{ Params: { projectId: string } }>(
     "/",
-    { onRequest: [app.authenticate] },
+    { preHandler: authRequired },
     async (request) => {
       const nodes = await nodesDb.listNodes(request.params.projectId);
       return nodes;
@@ -15,7 +23,7 @@ export async function nodeRoutes(app: FastifyInstance) {
   // POST /projects/:projectId/nodes
   app.post<{ Body: any; Params: { projectId: string } }>(
     "/",
-    { onRequest: [app.authenticate] },
+    { preHandler: authRequired },
     async (request, reply) => {
       const { type, semanticRole, label, properties, position, size, parentId } = request.body;
       const node = await nodesDb.createNode(
@@ -35,7 +43,7 @@ export async function nodeRoutes(app: FastifyInstance) {
   // PATCH /projects/:projectId/nodes/:nodeId
   app.patch<{ Body: any; Params: { projectId: string; nodeId: string } }>(
     "/:nodeId",
-    { onRequest: [app.authenticate] },
+    { preHandler: authRequired },
     async (request, reply) => {
       const node = await nodesDb.updateNode(request.params.nodeId, request.body);
       return reply.status(node ? 200 : 404).send(node || { error: "Not found" });
@@ -45,7 +53,7 @@ export async function nodeRoutes(app: FastifyInstance) {
   // DELETE /projects/:projectId/nodes/:nodeId
   app.delete<{ Params: { projectId: string; nodeId: string } }>(
     "/:nodeId",
-    { onRequest: [app.authenticate] },
+    { preHandler: authRequired },
     async (request, reply) => {
       const success = await nodesDb.deleteNode(request.params.nodeId);
       return reply.status(success ? 200 : 404).send({ success });

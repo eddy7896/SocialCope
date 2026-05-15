@@ -16,14 +16,6 @@ async function start() {
   await app.register(fastifyJwt, { secret: JWT_SECRET });
   await app.register(fastifyCors);
 
-  app.decorate("authenticate", async (request: any, reply: any) => {
-    try {
-      await request.jwtVerify();
-    } catch (error) {
-      reply.status(401).send({ error: "Unauthorized" });
-    }
-  });
-
   app.get("/health", async () => ({ status: "ok", service: "canvas-service" }));
 
   await app.register(projectRoutes, { prefix: "/projects" });
