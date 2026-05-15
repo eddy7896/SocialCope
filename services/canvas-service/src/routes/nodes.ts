@@ -25,7 +25,7 @@ export async function nodeRoutes(app: FastifyInstance) {
     "/",
     { preHandler: authRequired },
     async (request, reply) => {
-      const { type, semanticRole, label, properties, position, size, parentId } = request.body;
+      const { type, semanticRole, label, properties, position, size, parentId } = request.body as any;
       const node = await nodesDb.createNode(
         request.params.projectId,
         type,
@@ -45,7 +45,7 @@ export async function nodeRoutes(app: FastifyInstance) {
     "/:nodeId",
     { preHandler: authRequired },
     async (request, reply) => {
-      const node = await nodesDb.updateNode(request.params.nodeId, request.body);
+      const node = await nodesDb.updateNode(request.params.nodeId, request.body as any);
       return reply.status(node ? 200 : 404).send(node || { error: "Not found" });
     }
   );
