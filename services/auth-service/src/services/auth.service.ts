@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+import { sign, verify, SignOptions } from 'jsonwebtoken';
 
 const BCRYPT_ROUNDS = 12;
 const JWT_SECRET: string = process.env.JWT_SECRET || 'dev-secret-change-in-prod';
@@ -14,16 +14,13 @@ export async function comparePassword(password: string, hash: string): Promise<b
 }
 
 export function signToken(userId: string, email: string): string {
-  return jwt.sign(
-    { userId, email },
-    JWT_SECRET as any,
-    { expiresIn: JWT_EXPIRY }
-  );
+  const options: SignOptions = { expiresIn: JWT_EXPIRY };
+  return sign({ userId, email }, JWT_SECRET, options);
 }
 
 export function verifyToken(token: string): { userId: string; email: string } | null {
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as { userId: string; email: string };
+    const decoded = verify(token, JWT_SECRET) as { userId: string; email: string };
     return decoded;
   } catch (error) {
     return null;
