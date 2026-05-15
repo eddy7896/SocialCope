@@ -37,7 +37,7 @@ async function start() {
 
   try {
     await app.listen({ port: PORT, host: HOST });
-    app.log.info(`Canvas service listening on $`{HOST}:$`{PORT}`);
+    app.log.info(`Canvas service listening on ${HOST}:${PORT}`);
   } catch (err) {
     app.log.error(err);
     process.exit(1);
